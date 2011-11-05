@@ -1,0 +1,26 @@
+Ruhier Anthony
+Sauvage Tao
+
+eXtended Standard Library
+
+Our xstdlib was created in order to extend the C standard library.
+We want to add some datatype implementations like List (Simple, Double, ...), Tree and Graph (Binary, ...), but also
+some sorts like bubble sort, heap sort, etc.
+
+Map:
+	-contiguous
+		-contiguous simple linked list datatype
+		-contiguous binary tree datatype
+	-linked
+		-simple linked list datatype
+		-double linked list datatype
+		-binary tree
+
+Syntax:
+	-Function name: func_name
+	-Variable name: varName
+	-Function header comment:
+		/*  Return: varName (type) explanations
+			Data: varName (type) explanations
+			Process: explanations */
+
