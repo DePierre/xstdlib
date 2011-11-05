@@ -6,7 +6,7 @@
 #define TRUE 1
 #define FALSE 0
 
-typedef Bool int;
+typedef int Bool;
 
 
 #endif /* UTILS_H_INCLUDED */
