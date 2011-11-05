@@ -7,7 +7,7 @@ Our xstdlib was created in order to extend the C standard library.
 We want to add some datatype implementations like List (Simple, Double, ...), Tree and Graph (Binary, ...), but also
 some sorts like bubble sort, heap sort, etc.
 
-Folder map:
+Repo map:
 	-contiguous
 		-contiguous simple linked list datatype
 		-contiguous binary tree datatype
@@ -15,6 +15,7 @@ Folder map:
 		-simple linked list datatype
 		-double linked list datatype
 		-binary tree
+	-lib
 
 Syntax:
 	-Function name: func_name
