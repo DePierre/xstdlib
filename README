@@ -21,7 +21,7 @@ Syntax:
 	-Function name: func_name
 	-Variable name: varName
 	-Function header comment:
-		/*  Return: varName (type) explanations
-			Data: varName (type) explanations
-			Process: explanations */
+		/* Return: (type) explanations
+		Data: varName (type) explanations
+		Process: explanations */
 
