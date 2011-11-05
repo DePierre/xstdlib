@@ -115,7 +115,38 @@ Bool is_empty(List l)
 		  d (void*) the data of the new element
 		  n (int) the index of the new element position
 	Process: travers the list to reach the n-th place and add the new element */
-List insert_of(List l, void* d, int n);
+List insert_of(List l, void* d, int n)
+{
+	Elem *p = NULL, *q = NULL, *tmp = NULL;
+	int i = 0;
+
+	if(l != NULL)
+	{
+		p = l;
+		while(p->next != NULL && i <= n)
+		{
+			p = p->next;
+			i = i + 1;
+		}
+		q = (Elem*)calloc(1, sizeof(Elem));
+		q->data = d;
+		if(q != NULL)
+		{
+			if(i == n)
+			{
+				tmp = p->next;
+				p->next = q;
+				q->next = tmp;
+			}
+			else
+			{
+				p->next = q;
+				q->next = NULL;
+			}
+		}
+	}
+	return l;
+}
 
 /*  Return: (List) list with one more element at the head of the list
 	Data: l (List) list which will receive the new head
@@ -160,7 +191,30 @@ List insert_tail(List l, void* d)
 	Data: l (List) list which will have one less element
 		  n (int) the index of the element which will be deleted
 	Process: travers the list to reach the n-th element and free it */
-List remove_of(List l, int n);
+List remove_of(List l, int n)
+{
+	Elem *p = NULL, *q = NULL;
+	int i = 0;
+
+	if(l != NULL)
+	{
+		p = l;
+		while(p->next != NULL && i <= n)
+		{
+			p = p->next;
+			i = i + 1;
+		}
+		if(i == n)
+		{
+			q = p;
+			p = p->next;
+			free(q);
+			q = NULL;
+		}
+		return p;
+	}
+	return l;
+}
 
 /*  Return: (List) list without the head
 	Data: l (List) list which will have its head removed
@@ -197,8 +251,25 @@ List remove_tail(List l)
 	return l;
 }
 
+/*  Return: (List) list reversed
+	Data: l (List) list to reverse
+	Process: travers the list to change each next pointer value */
+List reverse(List l)
+{
+	List tmp = NULL;
+	Elem *p = NULL;
 
-
-
+	if(l != NULL)
+	{
+		p = l;
+		while(p->next != NULL)
+		{
+			tmp = insert_tail(p, p->data);
+			p = p->next;
+		}
+		return tmp;
+	}
+	return l;
+}
 
 
