@@ -14,7 +14,7 @@ int main()
 {
 
 	int i = 0, val = 0;
-	float array[L] = 0;	
+	float array[TAILLE] = 0;	
 
 	srand(time(NULL));
 
