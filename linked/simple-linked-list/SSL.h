@@ -6,10 +6,12 @@
 	Simple Linked List:
 		Declaration of simple linked list datatype */
 
+#include "../../utils/utils.h"
+
 typedef struct elem
 {
 	void *data;
-	struct elem next;
+	struct elem* next;
 } Elem;
 
 typedef Elem* List;
@@ -32,7 +34,5 @@ List remove_head(List);
 List remove_tail(List);
 List reverse(List);
 
-#endif // SSL_H_INCLUDED
-
-
+#endif /* SSL_H_INCLUDED */
 

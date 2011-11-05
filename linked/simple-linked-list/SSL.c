@@ -3,6 +3,7 @@
 	Simple Linked List:
 		Implementation of simple linked list datatype */
 
+#include <stdlib.h>
 #include "SSL.h"
 
 /* Creator & Destructor */
@@ -40,8 +41,6 @@ void delete_list(List l)
 			free(q);
 			q = NULL;
 		}
-		free(l);
-		l = NULL;
 	}
 }
 
