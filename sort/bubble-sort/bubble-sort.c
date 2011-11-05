@@ -3,17 +3,23 @@
 	Bubble sort: 
 		Sort list and array using the bubble sort method*/
 
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
+#include "bubble-sort.h"
+#include "../../utils/utils.h"
+#define L 15
 
 /*  Return: 
 	Data: int lenght : the lenght of the array
 		   void array : array you want to sort
 	Process:  */
-void bubblesort_array(int length, void* array)
+void bubblesort_array(int length, int array[])
 {
 
 	int i = 0, l = length;
-	void* tmp = NULL;
-	Bool changed = TRUE; // Show if changes have been done on the array
+	int tmp = 0;
+	Bool changed = TRUE; /* Show if changes have been done on the array */
 
 	do
 	{
@@ -25,13 +31,14 @@ void bubblesort_array(int length, void* array)
 			{
 				tmp = array[i];
 				array[i] = array[i+1];
-				array[i] = temp;
+				array[i+1] = tmp;
 				changed = TRUE;
 			}
 		}
 
 		l = l - 1;
-	} while (changed == TRUE);
+	} while (changed);
+
 
 }
 

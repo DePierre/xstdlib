@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include <time.h>
 #include "bubble-sort.h"
+#include "../../utils/utils.h"
 
 #define L 15
 
@@ -14,25 +15,25 @@ int main()
 {
 
 	int i = 0, val = 0;
-	float array[L] = 0;	
+	int array[L] = {0};	
 
 	srand(time(NULL));
 
-	for (i = 0; i < L - 1; i++)
+	for (i = 0; i < L ; i++)
 	{		
 		val = (rand() % 30) + 1;
 		array[i] = val;
 
 	}
 
-	bubblesort_array(array);
+	bubblesort_array(L, array);
 
 	printf("\n\n");
 
-	for (i = 0; i < L - 1; i++)
+	for (i = 0; i < L; i++)
 	{
 		
-		print(" %.0f ", array[i]);
+		printf(" %.0d ", array[i]);
 
 	}
 
