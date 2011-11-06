@@ -3,7 +3,7 @@
 
 
 
-void bubblesort_array(void* array);
+void bubblesort_array(int, int array[]);
 
-#endif // BUBBLESORT_H_INCLUDED
+#endif /* BUBBLESORT_H_INCLUDED */
 
