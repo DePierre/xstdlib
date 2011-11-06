@@ -19,9 +19,7 @@ void print_array(int l, int array[])
 	printf("\n");
 
 	for(i = 0; i < l; i++)
-	{
 		printf(" %d ", array[i]);
-	}
 }
 
 
@@ -32,15 +30,10 @@ void print_array(int l, int array[])
 void print_list(List l)
 {
     if(l == NULL)
-    {
         printf("List is empty");
-    }
 
     while(l->next != NULL)
-    {
-
-        printf("%d ", *(int*)l->data;
-}
+        printf("%d ", *(int*)l->data);
 }
 
 
