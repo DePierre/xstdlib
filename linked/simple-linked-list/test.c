@@ -9,11 +9,17 @@
 
 int main(void)
 {
-	List l = create_list((void*)12);
+	int *a = malloc(sizeof(int));
+	List l = NULL;
+	*a = 12;
+	l = create_list((void*)a);
 
+	printf("Length: %d\n", length_of(l));
+
+	*a = 15;
 	if(!is_empty(l))
 	{
-		l  = insert_head(l, (void*)15);
+		l  = insert_head(l, (void*)a);
 	}
 	else
 	{
@@ -21,9 +27,13 @@ int main(void)
 		return 0;
 	}
 
-	printf("%d\n", *(int*)(void*)l->data);
+
+	printf("Length: %d\n", length_of(l));
+	l = remove_tail(l);
+	printf("Length: %d\n", length_of(l));
 
 	delete_list(l);
+	free(a);
 	return 0;
 }
 

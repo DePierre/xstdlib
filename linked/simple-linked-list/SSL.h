@@ -25,6 +25,7 @@ void* head_value(List);
 Elem* tail(List);
 void* tail_value(List);
 Bool is_empty(List);
+int length_of(List);
 /* Modifiers */
 List insert_of(List, void*, int);
 List insert_head(List, void*);

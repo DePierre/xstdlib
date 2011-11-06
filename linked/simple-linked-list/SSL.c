@@ -4,6 +4,7 @@
 		Implementation of simple linked list datatype */
 
 #include <stdlib.h>
+#include <stdio.h>
 #include "SSL.h"
 
 /* Creator & Destructor */
@@ -106,6 +107,27 @@ void* tail_value(List l)
 Bool is_empty(List l)
 {
 	return (l == NULL) ? TRUE : FALSE;
+}
+
+/*  Return: (int) the number of element into the list
+	Data: l (List) list where elements have to be counted
+	Process: travers the list to increment the length and return it */
+int length_of(List l)
+{
+	Elem *p = NULL;
+	int i = 0;
+
+	if(l != NULL)
+	{
+		p = l;
+		while(p->next != NULL)
+		{
+			p = p->next;
+			i = i + 1;
+		}
+		return i + 1;
+	}
+	return 0;
 }
 
 /* Modifiers */
@@ -225,6 +247,7 @@ List remove_head(List l)
 	if(l != NULL)
 	{
 		p = l;
+		p = p->next;
 		free(l);
 		l = NULL;
 		return p;
@@ -235,15 +258,24 @@ List remove_head(List l)
 /*  Return: (List) list without the tail
 	Data: l (List) list which will have its tail removed
 	Process: travers the list and free the last element reached */
-List remove_tail(List l)
+Lisy280yt remove_tail(List l)
 {
-	Elem *p = NULL;
+	Elem *p = NULL, *q = NULL;
 
 	if(l != NULL)
 	{
 		p = l;
-		while(p->next != NULL)
+		while(p->next != NULL && p->next->next != NULL)
 			p = p->next;
+		if(p->next == NULL)
+		{
+			free(l);
+			return NULL;
+		}
+		if(p->next != NULL
+		q = p;
+		q->next = NULL;
+		p = p->next;
 		free(p);
 		p = NULL;
 	}
@@ -270,5 +302,4 @@ List reverse(List l)
 	}
 	return l;
 }
-
 
