@@ -4,8 +4,8 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "utils.h"
 #include "../linked/simple-linked-list/SLL.h"
+#include "utils.h"
 
 
 /*  Return:
