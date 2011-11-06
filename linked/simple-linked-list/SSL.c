@@ -258,7 +258,7 @@ List remove_head(List l)
 /*  Return: (List) list without the tail
 	Data: l (List) list which will have its tail removed
 	Process: travers the list and free the last element reached */
-Lisy280yt remove_tail(List l)
+List remove_tail(List l)
 {
 	Elem *p = NULL, *q = NULL;
 
