@@ -199,13 +199,17 @@ List insert_tail(List l, void* d)
 	else
 	{
 		p = (Elem*) calloc(1, sizeof(Elem));
-		p->data = d;
-		q = l;
-		while(q->next != NULL)
-			q = q->next;
-		q->next = p;
+		if(p != NULL)
+		{
+			p->data = d;
+			p->next = NULL;
+			q = l;
+			while(q->next != NULL)
+				q = q->next;
+			q->next = p;
+		}
 	}
-	return q;
+	return l;
 }
 
 /*  Return: (List) list with one less element
@@ -214,25 +218,27 @@ List insert_tail(List l, void* d)
 	Process: travers the list to reach the n-th element and free it */
 List remove_of(List l, int n)
 {
-	Elem *p = NULL, *q = NULL;
+	Elem *p = NULL, *q = NULL, *tmp = NULL;
 	int i = 0;
 
 	if(l != NULL)
 	{
 		p = l;
-		while(p->next != NULL && i <= n)
+		while(p->next != NULL && i < n)
 		{
 			p = p->next;
 			i = i + 1;
 		}
-		if(i == n)
+		if(p->next != NULL)
 		{
+			tmp = p;
+			p = p->next;
 			q = p;
 			p = p->next;
+			tmp->next = p;
 			free(q);
 			q = NULL;
 		}
-		return p;
 	}
 	return l;
 }
@@ -272,7 +278,6 @@ List remove_tail(List l)
 			free(l);
 			return NULL;
 		}
-		if(p->next != NULL
 		q = p;
 		q->next = NULL;
 		p = p->next;
@@ -292,10 +297,11 @@ List reverse(List l)
 
 	if(l != NULL)
 	{
+		tmp = l;
 		p = l;
 		while(p->next != NULL)
 		{
-			tmp = insert_tail(p, p->data);
+			tmp = insert_head(p, p->data);
 			p = p->next;
 		}
 		return tmp;

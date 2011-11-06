@@ -29,10 +29,16 @@ int main(void)
 
 
 	printf("Length: %d\n", length_of(l));
-	l = remove_tail(l);
+    l = insert_tail(l, (void*)a);
+	printf("Length: %d\n", length_of(l));
+    l = insert_of(l, (void*)a, 2);
+	printf("Length: %d\n", length_of(l));
+    l = remove_of(l, 2);
+	printf("Length: %d\n", length_of(l));
+    l = reverse(l);
 	printf("Length: %d\n", length_of(l));
 
-	delete_list(l);
+    delete_list(l);
 	free(a);
 	return 0;
 }
