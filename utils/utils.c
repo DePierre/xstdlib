@@ -1,7 +1,11 @@
 /*  Ruhier Anthony
 	Date : 11/05/2011
-	Utils */ #include <stdlib.h>
+	Utils */
+
+#include <stdlib.h>
 #include <stdio.h>
+#include "utils.h"
+#include "../linked/simple-linked-list/SLL.h"
 
 
 /*  Return:
@@ -23,9 +27,9 @@ void print_array(int l, int array[])
 
 
 /*  Return:
-	Data: l list : list that's going to be print
+	Data: l List : list that's going to be print
 	Process:  */
-void print_list(list l)
+void print_list(List l)
 {
     if(l == NULL)
     {
@@ -36,8 +40,7 @@ void print_list(list l)
     {
 
         printf("%d ", *(int*)l->data;
-
-    }
+}
 }
 
 

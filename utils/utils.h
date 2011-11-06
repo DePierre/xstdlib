@@ -14,7 +14,7 @@ void print_array(int l, int array[]);
 
 
 /* List */
-void print_list(list l);
+void print_list(List l);
 
 
 #endif /* UTILS_H_INCLUDED */
