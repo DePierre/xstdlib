@@ -264,27 +264,28 @@ List remove_head(List l)
 /*  Return: (List) list without the tail
 	Data: l (List) list which will have its tail removed
 	Process: travers the list and free the last element reached */
-List remove_tail(List l)
+List remove_tail(List input)
 {
-	Elem *p = NULL, *q = NULL;
+    Elem* current = input;
 
-	if(l != NULL)
-	{
-		p = l;
-		while(p->next != NULL && p->next->next != NULL)
-			p = p->next;
-		if(p->next == NULL)
-		{
-			free(l);
-			return NULL;
-		}
-		q = p;
-		q->next = NULL;
-		p = p->next;
-		free(p);
-		p = NULL;
-	}
-	return l;
+	if(input != NULL)
+    {
+	    if(input->next != NULL)
+        {
+            while(current->next->next != NULL)
+                current = current->next;
+
+            free(current->next);
+            current->next = NULL;
+        }
+        else
+        {
+            free(input);
+            return NULL;
+        }
+    }
+
+    return input;
 }
 
 /*  Return: (List) list reversed
